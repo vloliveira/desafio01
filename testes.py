@@ -1,12 +1,3 @@
-"""Dados os valores de horários, decifre a lógica e faça um código para executar:
-entrada01: 3:45
-entrada02: 14:20
-saída: 6:05"""
-
-""" Dividir horas e minutos para exibição
-    *Converter na saída para formato 12h
-    *Fazer um if para transformar 24h em 12h
-"""
 
 hora1 = int(input("Digite a primeira hora"))
 #min1 =  int(input("Digite os minutos"))
@@ -14,9 +5,11 @@ hora1 = int(input("Digite a primeira hora"))
 hora2 = int(input("Digite a segunda hora"))
 #min2 =  int(input("Digite os minutos"))
 
+somaH = hora1 + hora2
+
 #Conversão das horas
-if hora1 <= 12 and hora2 <= 12:
-    somaH = hora1 + hora2
+if somaH >12:
+    somaH -= 12
     #Print teste abaixo
     print(somaH)
 else:
@@ -38,10 +31,11 @@ else:
     print(hora2)
     print(somaFinal)
 
+"""
+somaMin = 0
 #Conversão dos minutos
-"""if min1 <=60 and min2 <=60:
+if min1 <=60 and min2 <=60:
     somaMin = min1 + min2
-    print(somaMin)
 else:
     if min1 >= 60 >= min2:
         novoMin1 = min1 - 60
@@ -54,14 +48,6 @@ else:
         min1 = novoMin1
         novoMin2 = min2 - 60
         min2 = novoMin2
-    somaMin = min1 + min2
-    print(min1)
-    print(min2)
-    print(somaMin)
-
-"""
-
-
-
-
-
+if somaMin > 60:
+    somaMin -= 60
+print(somaMin)"""
