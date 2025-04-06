@@ -9,59 +9,28 @@ saída: 6:05"""
 """
 
 hora1 = int(input("Digite a primeira hora"))
-#min1 =  int(input("Digite os minutos"))
+min1 =  int(input("Digite os minutos"))
 
 hora2 = int(input("Digite a segunda hora"))
-#min2 =  int(input("Digite os minutos"))
+min2 =  int(input("Digite os minutos"))
 
-#Conversão das horas
-if hora1 <= 12 and hora2 <= 12:
-    somaH = hora1 + hora2
-    #Print teste abaixo
-    print(somaH)
+somaH = hora1 + hora2
+somaMin = min1 + min2
+
+#Conversão das horas e min pra 12h
+if somaH == 0:
+    somaH = 12
+elif somaH > 12 and somaH <= 24:
+    somaH -= 12
 else:
-    if hora1 > 12 >= hora2:
-        novaH = hora1-12
-        hora1 = novaH
-    elif hora2 > 12 >= hora1:
-        novaH2 = hora2-12
-        hora2 = novaH2
-    else:
-        novaH = hora1 - 12
-        hora1 = novaH
-        novaH2 = hora2 - 12
-        hora2 = novaH2
-    somaFinal = hora1 + hora2
-    #Prints Testes abaixo:
+    somaH -= 24
+    if somaH > 12:
+        somaH -=12
 
-    print(hora1)
-    print(hora2)
-    print(somaFinal)
+if somaMin == 0:
+    somaMin = 60
+elif somaMin >= 60:
+    somaH += 1
+    somaMin -= 60
 
-#Conversão dos minutos
-"""if min1 <=60 and min2 <=60:
-    somaMin = min1 + min2
-    print(somaMin)
-else:
-    if min1 >= 60 >= min2:
-        novoMin1 = min1 - 60
-        min1 = novoMin1
-    elif min1 >= 60 >= min1:
-        novoMin2 = min2 - 60
-        min2 = novoMin2
-    else:
-        novoMin1 = min1 - 60
-        min1 = novoMin1
-        novoMin2 = min2 - 60
-        min2 = novoMin2
-    somaMin = min1 + min2
-    print(min1)
-    print(min2)
-    print(somaMin)
-
-"""
-
-
-
-
-
+print(f"{somaH}:{somaMin:02d}")
