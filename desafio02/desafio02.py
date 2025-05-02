@@ -1,61 +1,21 @@
-palavra = "abacaxi"
-palavraCorreta = ["_","_","_","_","_","_","_"]
+palavra = "abacate"
+palavraCorreta = ["_"] * len(palavra)
 tentativa = " "
 count = 0
 parada = 0
 acertos = 0
-mensagem = (" ----------\n"
-           " |        |\n"
-           " |        \n"
-           " |           \n"
-           " |           \n"
-           "_|__         \n")
+mensagem = " "
 
-desenho = [" ----------\n"
-           " |        |\n"
-           " |        \n"
-           " |           \n"
-           " |           \n"
-           "_|__         \n",
-           " ----------\n"
-           " |        |\n"
-           " |        O\n"
-           " |           \n"
-           " |           \n"
-           "_|__         \n",
-           " ----------\n"
-           " |        |\n"
-           " |        O\n"
-           " |       /   \n"
-           " |           \n"
-           "_|__         \n",
-           " ----------\n"
-           " |        |\n"
-           " |        O\n"
-           " |       /|  \n"
-           " |           \n"
-           "_|__         \n",
-           " ----------\n"
-           " |        |\n"
-           " |        O\n"
-           " |       /|\\\n"
-           " |           \n"
-           "_|__         \n",
-           " ----------\n"
-           " |        |\n"
-           " |        O\n"
-           " |       /|\\\n"
-           " |       /   \n"
-           "_|__         \n",
-           " ----------\n"
-           " |        |\n"
-           " |        O\n"
-           " |       /|\\\n"
-           " |       / \\\n"
-           "_|__         \n"
+desenho = [" ----------\n |        |\n |        \n |           \n |           \n_|__         \n",
+           " ----------\n |        |\n |        O\n |           \n |           \n_|__         \n",
+           " ----------\n |        |\n |        O\n |       /   \n |           \n_|__         \n",
+           " ----------\n |        |\n |        O\n |       /|  \n |           \n_|__         \n",
+           " ----------\n |        |\n |        O\n |       /|\\\n |           \n_|__         \n",
+           " ----------\n |        |\n |        O\n |       /|\\\n |       /   \n_|__         \n",
+           " ----------\n |        |\n |        O\n |       /|\\\n |       / \\\n_|__         \n"
            ]
 
-print(mensagem, *palavraCorreta)
+print(desenho[0], *palavraCorreta)
 
 while count < 6 :
     erro = 0
@@ -65,7 +25,6 @@ while count < 6 :
         if tentativa == palavra[i]:
             palavraCorreta[i] = palavra[i]
             acertos += 1
-
         else:
             erro +=1
     if erro == len(palavra):
